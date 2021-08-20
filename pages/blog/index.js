@@ -1,8 +1,7 @@
 import React from "react";
-import Link from "next/Link";
+import Link from "next/link";
 import styles from "/styles/Home.module.scss";
 import fs from "fs";
-
 
 const BlogHome = ({ slugs }) => {
   return (
