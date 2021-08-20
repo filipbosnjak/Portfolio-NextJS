@@ -72,7 +72,7 @@
           transform: scale(1.2);
 }
 
-@media (max-width: 100px) {
+@media (max-width: 800px) {
   #home {
     width: 100%;
   }
@@ -169,7 +169,7 @@
   color: #111;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 800px) {
   .navbar {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -319,7 +319,7 @@
   font-weight: 800;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 800px) {
   #about .aboutContent {
     width: 90%;
     margin: 0 auto;
@@ -431,7 +431,7 @@
           animation: reactIconAnimation 5s linear infinite;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 800px) {
   .skills {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -565,7 +565,7 @@
   transition: 0.4s linear;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 800px) {
   #works .works .work {
     width: 49%;
   }
@@ -678,7 +678,7 @@
   color: #fff;
 }
 
-@media (max-width: 100px) {
+@media (max-width: 800px) {
   #contact .contactInfo {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -841,7 +841,7 @@
   }
 }
 
-@media (max-width: 100px) {
+@media (max-width: 800px) {
   .middle {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
