@@ -14,22 +14,22 @@ const LandingNavbar = () => {
             <span></span>
           </button>
           <div className={styles.navbarMenu}>
-            <a className={styles.link} href='/'>
+            <Link className={styles.link} href='/'>
               Home
-            </a>
-            <a className={styles.link} href='#about'>
+            </Link>
+            <Link className={styles.link} href='#about'>
               About Me
-            </a>
+            </Link>
             <Link href={"/blog"}>My Blog</Link>
-            <a className={styles.link} href='#skil'>
+            <Link className={styles.link} href='#skil'>
               Skills
-            </a>
-            <a className={styles.link} href='#works'>
+            </Link>
+            <Link className={styles.link} href='#works'>
               My Work
-            </a>
-            <a className={styles.link} href='#contact'>
+            </Link>
+            <Link className={styles.link} href='#contact'>
               Contact Me
-            </a>
+            </Link>
           </div>
         </div>
       </nav>
