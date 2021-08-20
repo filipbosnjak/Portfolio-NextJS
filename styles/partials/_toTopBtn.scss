@@ -1,0 +1,21 @@
+.goTop{
+    position: fixed;
+    z-index: 99;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: $main-blue;
+    border: none;
+    border-radius: 30px;
+    transform: rotate(-45deg);
+    cursor: pointer;
+    color: #fff;
+    outline: none;
+    display: none;
+    transition: .3s ease-in-out;
+
+    &:hover{
+        transform: scale(1.1);
+    }
+  }
