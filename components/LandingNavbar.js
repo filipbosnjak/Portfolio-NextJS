@@ -17,14 +17,6 @@ const LandingNavbar = () => {
   if (process.browser) {
     window.addEventListener("scroll", scrollListener);
   }
-  let nav = styles.navbar;
-  console.log(nav);
-  useEffect(() => {
-    if (1) {
-      nav = styles.navbar;
-      console.log(nav);
-    }
-  }, []);
 
   return (
     <div className={styles.container}>
