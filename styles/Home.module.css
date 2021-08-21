@@ -333,6 +333,9 @@
     border-radius: 50%;
     padding-right: 0 !important;
   }
+  .about .aboutContent .aboutText .name {
+    color: #185bc9;
+  }
   .about .aboutContent .aboutText h2 {
     text-align: center;
   }
@@ -609,9 +612,11 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  margin-bottom: 60px;
 }
 
 .contact .contactInfo .item {

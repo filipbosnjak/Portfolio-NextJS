@@ -27,6 +27,31 @@ const LandingNavbar = () => {
       window.addEventListener("scroll", scrollListener);
       let toggler = document.querySelector("#toggler");
       toggler.addEventListener("click", toggle);
+
+      //Scrollreveal
+      if (window.innerWidth > 802) {
+        console.log("scroll");
+        window.sr = ScrollReveal();
+
+        sr.reveal(styles.navbarMenu, {
+          duration: 1500,
+          origin: "top",
+          distance: "50px",
+          mobile: false,
+        });
+      }
+      window.onresize = () => {
+        if (window.innerWidth > 800) {
+          window.sr = ScrollReveal();
+
+          sr.reveal(".navbar-menu", {
+            duration: 1500,
+            origin: "top",
+            distance: "50px",
+            mobile: false,
+          });
+        }
+      };
     }
     return () => {
       window.removeEventListener("scroll", scrollListener);

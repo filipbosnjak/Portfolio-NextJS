@@ -97,6 +97,9 @@
         padding-right: 0 !important;
       }
       .aboutText {
+        .name {
+          color: $main-blue;
+        }
         h2 {
           text-align: center;
         }

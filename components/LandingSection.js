@@ -1,4 +1,6 @@
 import React from "react";
+import Fade from "react-reveal/Fade";
+import Slide from "react-reveal/Slide";
 
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
@@ -7,7 +9,9 @@ import LandingNavbar from "./LandingNavbar";
 const LandingSection = () => {
   return (
     <>
-      <LandingNavbar />
+      <Fade top>
+        <LandingNavbar />
+      </Fade>
       <section className={styles.home}>
         <div className={styles.content}>
           <h1 className={styles.lgHeading}>
@@ -23,16 +27,21 @@ const LandingSection = () => {
             Developer
           </h2>
           <div className={styles.buttons}>
-            <div className={styles.left}>
-              <a href='#contact'>Contact Me</a>
-            </div>
-            <div className={styles.right}>
-              <a
-                href='http://dominis.phy.hr/~fbosnjak/Filip_Bo%c5%a1njak_Resume.pdf'
-                download=''>
-                Download CV
-              </a>
-            </div>
+            <Slide left>
+              <div className={styles.left}>
+                <a href='#contact'>Contact Me</a>
+              </div>
+            </Slide>
+
+            <Slide right>
+              <div className={styles.right}>
+                <a
+                  href='http://dominis.phy.hr/~fbosnjak/Filip_Bo%c5%a1njak_Resume.pdf'
+                  download=''>
+                  Download CV
+                </a>
+              </div>
+            </Slide>
           </div>
         </div>
       </section>

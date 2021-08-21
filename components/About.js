@@ -2,6 +2,7 @@ import React from "react";
 import styles from "../styles/Home.module.scss";
 import Image from "next/image";
 import portrait from "../images/portrait.jpg";
+import Slide from "react-reveal/Slide";
 
 const About = () => {
   return (
@@ -9,16 +10,20 @@ const About = () => {
       <div className={styles.about}>
         <h1 className={styles.sectionTitle}>About Me</h1>
         <div className={styles.aboutContent}>
-          <div className={styles.aboutPic}>
-            <Image
-              src={portrait}
-              alt='Filip Bošnjak'
-              className={styles.aboutPic}
-            />
-          </div>
+          <Slide left>
+            <div className={styles.aboutPic}>
+              <Image
+                src={portrait}
+                alt='Filip Bošnjak'
+                className={styles.aboutPic}
+              />
+            </div>
+          </Slide>
 
           <div className={styles.aboutText}>
-            <h2>Hello. I'm Filip Bošnjak.</h2>
+            <h2>
+              Hello. I'm <div className={styles.name}>Filip Bošnjak.</div>
+            </h2>
             <p>
               I'm a fullstack developer with passion for web application
               development and web design but also for backend programming and
