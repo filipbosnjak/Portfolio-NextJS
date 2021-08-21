@@ -1,10 +1,11 @@
-import { React, useState } from "react";
+import { React, useState, useEffect } from "react";
 
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
 
 const LandingNavbar = () => {
   const [isSticky, setIsSticky] = useState("");
+  const [isActive, setIsActive] = useState("");
 
   const scrollListener = () => {
     if (window.scrollY >= 20) {
@@ -14,20 +15,38 @@ const LandingNavbar = () => {
     }
   };
 
-  if (process.browser) {
-    window.addEventListener("scroll", scrollListener);
-  }
+  const toggle = () => {
+    if (isActive === "") {
+      setIsActive(styles.active);
+    } else {
+      setIsActive("");
+    }
+  };
+  useEffect(() => {
+    if (process.browser) {
+      window.addEventListener("scroll", scrollListener);
+      let toggler = document.querySelector("#toggler");
+      toggler.addEventListener("click", toggle);
+    }
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+      if (document.querySelector("#toggler")) {
+        let toggler = document.querySelector("#toggler");
+        toggler.removeEventListener("click", toggle);
+      }
+    };
+  }, [isActive]);
 
   return (
     <div className={styles.container}>
       <nav className={`${styles.navbar} ${isSticky}`}>
         <div className=''>
-          <button className={styles.menuToggler}>
+          <button id='toggler' className={`${styles.menuToggler} ${isActive}`}>
             <span></span>
             <span></span>
             <span></span>
           </button>
-          <div className={styles.navbarMenu}>
+          <div className={`${styles.navbarMenu} ${isActive}`}>
             <Link className={styles.link} href='/'>
               Home
             </Link>
