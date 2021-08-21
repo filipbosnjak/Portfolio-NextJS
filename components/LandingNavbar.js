@@ -1,12 +1,34 @@
-import React from "react";
+import { React, useState } from "react";
 
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
 
 const LandingNavbar = () => {
+  const [isSticky, setIsSticky] = useState("");
+
+  const scrollListener = () => {
+    if (window.scrollY >= 20) {
+      setIsSticky(styles.sticky);
+    } else {
+      setIsSticky(" ");
+    }
+  };
+
+  if (process.browser) {
+    window.addEventListener("scroll", scrollListener);
+  }
+  let nav = styles.navbar;
+  console.log(nav);
+  useEffect(() => {
+    if (1) {
+      nav = styles.navbar;
+      console.log(nav);
+    }
+  }, []);
+
   return (
     <div className={styles.container}>
-      <nav className={styles.navbar}>
+      <nav className={`${styles.navbar} ${isSticky}`}>
         <div className=''>
           <button className={styles.menuToggler}>
             <span></span>
