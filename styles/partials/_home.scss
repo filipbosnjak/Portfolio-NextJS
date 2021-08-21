@@ -8,7 +8,6 @@
   justify-content: center;
   height: 110vh;
   text-align: center;
-
   h1 {
     margin: 0;
     font-weight: 400;
@@ -58,13 +57,15 @@
 }
 
 @include mobile {
-  #home {
+  .home {
+    width: 100%;
     .content {
       width: 100%;
     }
     width: 100%;
     h1 {
       margin-bottom: 60px;
+      word-wrap: break-word;
     }
     h2 {
       width: 100%;

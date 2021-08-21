@@ -88,7 +88,8 @@
 }
 
 @include mobile {
-  #contact {
+  .contact {
+    height: 190vh;
     .contactInfo {
       flex-direction: column;
       .item {

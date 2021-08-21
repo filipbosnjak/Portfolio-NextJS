@@ -73,22 +73,24 @@
 }
 
 @media (max-width: 800px) {
-  #home {
+  .home {
+    width: 100%;
     width: 100%;
   }
-  #home .content {
+  .home .content {
     width: 100%;
   }
-  #home h1 {
+  .home h1 {
     margin-bottom: 60px;
+    word-wrap: break-word;
   }
-  #home h2 {
+  .home h2 {
     width: 100%;
   }
-  #home .lgHeading {
+  .home .lgHeading {
     font-size: 50px;
   }
-  #home .buttons {
+  .home .buttons {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
   }
@@ -255,6 +257,7 @@
 }
 
 .about {
+  padding: 0 15px;
   padding-top: 100px;
 }
 
@@ -271,9 +274,9 @@
 }
 
 .about .aboutContent .aboutPic {
-  width: 350px;
+  width: 340px;
+  height: 340px;
   border-radius: 50%;
-  margin: 0 50px;
   padding-right: 35px;
 }
 
@@ -320,14 +323,23 @@
 }
 
 @media (max-width: 800px) {
-  #about .aboutContent {
-    width: 90%;
+  .about .aboutContent {
+    width: 95%;
     margin: 0 auto;
   }
-  #about .aboutContent .about-pic {
-    margin: 0;
+  .about .aboutContent .aboutPic {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    padding-right: 0 !important;
   }
-  #about .aboutContent h3 {
+  .about .aboutContent .aboutText h2 {
+    text-align: center;
+  }
+  .about .aboutContent .aboutText p {
+    padding: 0;
+  }
+  .about .aboutContent h3 {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -336,10 +348,10 @@
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #about .aboutContent h3 span:nth-child(1):before,
-  #about .aboutContent h3 span:nth-child(2):before,
-  #about .aboutContent h3 span:nth-child(3):before,
-  #about .aboutContent h3 span:nth-child(3):after {
+  .about .aboutContent h3 span:nth-child(1):before,
+  .about .aboutContent h3 span:nth-child(2):before,
+  .about .aboutContent h3 span:nth-child(3):before,
+  .about .aboutContent h3 span:nth-child(3):after {
     content: "";
     width: 6px;
     height: 6px;
@@ -679,27 +691,30 @@
 }
 
 @media (max-width: 800px) {
-  #contact .contactInfo {
+  .contact {
+    height: 190vh;
+  }
+  .contact .contactInfo {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #contact .contactInfo .item {
+  .contact .contactInfo .item {
     width: 94%;
     margin: 10px 0;
   }
-  #contact .contactForm {
+  .contact .contactForm {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  #contact .contactForm .nameZone,
-  #contact .contactForm .emailZone {
+  .contact .contactForm .nameZone,
+  .contact .contactForm .emailZone {
     max-width: 100%;
   }
-  #contact .contactForm .btn1 {
+  .contact .contactForm .btn1 {
     margin: 10px auto;
   }
 }
@@ -900,6 +915,7 @@
 .container .card .content {
   padding: 30px;
   text-align: center;
+  overflow: hidden;
 }
 
 .container .card .content h2 {

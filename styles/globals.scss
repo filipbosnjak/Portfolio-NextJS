@@ -1,17 +1,43 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Open Sans', sans-serif;
+@import "./mixins/resp";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
 }
-body{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgb(2,0,36);
-    width: 100%;
-    background:linear-gradient( rgba(0,0,0, 0.7), rgba(0,0,0, 0.7) ),url(../images/bg.jpg) no-repeat center;
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 100vh;
+body {
+  //display: flex;
+  //justify-content: center;
+  //align-items: center;
+  background: rgb(2, 0, 36);
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url(../images/bg.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: $main-greyish;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #353b48;
+}
+
+@include mobile {
+  html {
+    overflow-x: hidden !important;
+  }
+  body {
+    position: relative;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
