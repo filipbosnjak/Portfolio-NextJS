@@ -10,6 +10,7 @@ const NextApp = ({ Component, pageProps }) => {
   return (
     <>
       <Script
+        strategy='lazyOnload'
         data-ad-client='ca-pub-6448765112690920'
         async
         src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
