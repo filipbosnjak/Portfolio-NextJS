@@ -11,7 +11,7 @@ const NextApp = ({ Component, pageProps }) => {
     <>
       <Script
         strategy='lazyOnload'
-        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
+        src={`https://www.googletagmanager.com/gtag/js?id=G-5VF92BKRP1`}
       />
       <Script strategy='lazyOnload'>
         {`
@@ -23,8 +23,7 @@ const NextApp = ({ Component, pageProps }) => {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
-      debugger;
+      gtag('config', 'G-5VF92BKRP1');
   `}
       </Script>
       <Component {...pageProps} />{" "}
