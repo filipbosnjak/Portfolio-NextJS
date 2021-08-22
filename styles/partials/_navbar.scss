@@ -7,7 +7,6 @@
   width: 100%;
   padding: 30px 0;
   top: 0;
-  z-index: 999;
   transition: 0.5s linear;
 
   .menuToggler {
@@ -35,7 +34,9 @@
     padding-left: 50px;
     display: flex;
     align-items: center;
+    position: fixedS;
     justify-content: space-around;
+    z-index: 999;
 
     a {
       align-items: center;
@@ -70,6 +71,7 @@
     //Without this a{} gets overriden by the a{} up.
     display: flex;
     width: 100%;
+    z-index: 999;
     .menuToggler {
       margin-left: 10px;
       display: block;
@@ -100,6 +102,7 @@
   }
   .navbarMenu.active {
     left: 0;
+    z-index: 998;
   }
   .sticky {
     padding: 10px 0;

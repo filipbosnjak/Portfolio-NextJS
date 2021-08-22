@@ -14,11 +14,9 @@ const Post = ({ content, data, html }) => {
         <title>{data.title}</title>
         <meta title='description' content={data.description} />
       </Head>
-      <body>
         <h1>dangerouslySetInnerHTML: </h1>
         <div dangerouslySetInnerHTML={{ __html: content }}></div>
         <Link href='/'>Go back</Link>
-      </body>
     </>
   );
 };

@@ -103,7 +103,6 @@
   width: 100%;
   padding: 30px 0;
   top: 0;
-  z-index: 999;
   -webkit-transition: 0.5s linear;
   transition: 0.5s linear;
 }
@@ -138,8 +137,10 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: fixedS;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+  z-index: 999;
 }
 
 .navbar .navbarMenu a {
@@ -177,6 +178,7 @@
     display: -ms-flexbox;
     display: flex;
     width: 100%;
+    z-index: 999;
   }
   .navbar .menuToggler {
     margin-left: 10px;
@@ -212,6 +214,7 @@
   }
   .navbarMenu.active {
     left: 0;
+    z-index: 998;
   }
   .sticky {
     padding: 10px 0;

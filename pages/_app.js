@@ -15,10 +15,15 @@ const NextApp = ({ Component, pageProps }) => {
       />
       <Script strategy='lazyOnload'>
         {`
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
+        window.process = {
+          env: {
+            NODE_ENV:'development'
+          }
+        }
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
   `}
       </Script>
       <Component {...pageProps} />{" "}

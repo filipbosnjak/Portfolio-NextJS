@@ -5,7 +5,7 @@ const HeadCustom = () => {
   return (
     <>
       <Head>
-        <title>MyBlog</title>
+        <title>Filip Bošnjak</title>
         <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link rel='preconnect' href='https://fonts.gstatic.com' crossOrigin />
         <link
