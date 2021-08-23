@@ -23,7 +23,7 @@ const LandingSection = () => {
             Master
           </h2>
           <h2 className={styles.smHeading}>
-            <span className={styles.textSecondary}>Software </span> & Web
+            <span className={styles.textSecondary}>FullStack </span> Software
             Developer
           </h2>
           <div className={styles.buttons}>

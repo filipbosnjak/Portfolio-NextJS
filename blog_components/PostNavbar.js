@@ -48,26 +48,13 @@ const LandingNavbar = () => {
           </button>
           <div className={`${styles.navbarMenu} ${isActive}`}>
             <Link className={styles.link} href='/'>
-              <a
-                onClick={() => {
-                  scroll(0, 0);
-                  toggle();
-                }}>
-                Home
-              </a>
+              About Me
             </Link>
-            <Link className={styles.link} href='#about'>
-              <a onClick={toggle}>About Me</a>
+            <Link className={styles.link} href='/blog'>
+              See more
             </Link>
-            <Link href={"/blog"}>My Blog</Link>
-            <Link className={styles.link} href='#skill'>
-              <a onClick={toggle}>Skills</a>
-            </Link>
-            <Link className={styles.link} href='#works'>
-              <a onClick={toggle}>My Work</a>
-            </Link>
-            <Link className={styles.link} href='#contact'>
-              <a onClick={toggle}>Contact Me</a>
+            <Link className={styles.link} href='/'>
+              Contact Me
             </Link>
           </div>
         </div>

@@ -38,19 +38,22 @@ const BlogHome = ({ slugs }) => {
             <span></span>
           </button>
           <div className={`${styles.navbarMenu} ${isActive}`}>
-            <Link href={"/"}>Home</Link>
-            <a className={styles.link} href='#about'>
-              About Me
-            </a>
-            <a className={styles.link} href='#skil'>
-              Skills
-            </a>
-            <a className={styles.link} href='#works'>
-              My Work
-            </a>
-            <a className={styles.link} href='#contact'>
-              Contact Me
-            </a>
+            <Link className={styles.link} href='/'>
+              <a onClick={toggle}>Home</a>
+            </Link>
+            <Link className={styles.link} href='#about'>
+              <a onClick={toggle}>About Me</a>
+            </Link>
+            <Link href={"/blog"}>My Blog</Link>
+            <Link className={styles.link} href='#skill'>
+              <a onClick={toggle}>Skills</a>
+            </Link>
+            <Link className={styles.link} href='#works'>
+              <a onClick={toggle}>My Work</a>
+            </Link>
+            <Link className={styles.link} href='#contact'>
+              <a onClick={toggle}>Contact Me</a>
+            </Link>
           </div>
         </div>
       </nav>
@@ -62,8 +65,8 @@ const BlogHome = ({ slugs }) => {
             <span></span>
             <span></span>
             <div className={styles.content}>
-              <h2>01</h2>
-              <h3>Osnove strojnog učenja</h3>
+              <h2>011</h2>
+              <h3>Osnove strojnog učenjasa</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis,
                 neque?

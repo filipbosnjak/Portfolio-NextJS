@@ -6,9 +6,10 @@ import matter from "gray-matter";
 import Head from "next/head";
 import marked from "marked";
 import Link from "next/link";
-import PostNavbar from "../../components/PostNavbar";
+import PostNavbar from "../../blog_components/PostNavbar";
 
 const Post = ({ content, data, html }) => {
+  console.log(content)
   return (
     <>
       <Head>
@@ -43,7 +44,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
   const markdownWithMetaData = fs
     .readFileSync(path.join("posts", slug + ".html"))
     .toString();
-
   const parsedMarkdown = matter(markdownWithMetaData);
   return {
     props: {

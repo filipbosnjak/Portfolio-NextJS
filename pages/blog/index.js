@@ -46,45 +46,49 @@ const BlogHome = ({ slugs }) => {
             <span></span>
           </button>
           <div className={`${styles.navbarMenu} ${isActive}`}>
-            <Link href={"/"}>Home</Link>
-            <a className={styles.link} href='/'>
-              About Me
-            </a>
-            <a className={styles.link} href='"/"'>
-              Skills
-            </a>
-            <a className={styles.link} href='"/"'>
-              My Work
-            </a>
-            <a className={styles.link} href='"/"'>
-              Contact Me
-            </a>
+            <Link className={styles.link} href='/'>
+              <a onClick={toggle}>Home</a>
+            </Link>
+            <Link className={styles.link} href='/'>
+              <a onClick={toggle}>About Me</a>
+            </Link>
+            <Link className={styles.link} href='/'>
+              <a onClick={toggle}>Skills</a>
+            </Link>
+            <Link className={styles.link} href='/'>
+              <a onClick={toggle}>My Work</a>
+            </Link>
+            <Link className={styles.link} href='/'>
+              <a onClick={toggle}>Contact Me</a>
+            </Link>
           </div>
         </div>
       </nav>
-      {slugs.map((slug) => {
-        return (
-          <div key={slug} className={styles.card}>
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            <div className={styles.content}>
-              <h2>01</h2>
-              <h3>Osnove strojnog učenja</h3>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis,
-                neque?
-              </p>
-              <button className={styles.button}>
-                <Link href={"/blog/" + slug}>
-                  <a>{slug}</a>
-                </Link>
-              </button>
+      <div className={styles.showcase}>
+        {slugs.map((slug) => {
+          return (
+            <div key={slug} className={styles.card}>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+              <div className={styles.content}>
+                <h2>012</h2>
+                <h3>Osnove strojnog učenja</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis,
+                  neque?
+                </p>
+                <button className={styles.button}>
+                  <Link href={"/blog/" + slug}>
+                    <a>{slug}</a>
+                  </Link>
+                </button>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 };

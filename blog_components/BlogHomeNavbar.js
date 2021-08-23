@@ -3,7 +3,7 @@ import { React, useState, useEffect } from "react";
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
 
-const LandingNavbar = () => {
+const BlogHomeNavbar = () => {
   const [isSticky, setIsSticky] = useState("");
   const [isActive, setIsActive] = useState("");
 
@@ -48,13 +48,20 @@ const LandingNavbar = () => {
           </button>
           <div className={`${styles.navbarMenu} ${isActive}`}>
             <Link className={styles.link} href='/'>
-              About Me
+              <a onClick={toggle}>Home</a>
             </Link>
-            <Link className={styles.link} href='/blog'>
-              See more
+            <Link className={styles.link} href='#about'>
+              <a onClick={toggle}>About Me</a>
+            </Link>
+            <Link href={"/blog"}>My Blog</Link>
+            <Link className={styles.link} href='#skill'>
+              <a onClick={toggle}>Skills</a>
+            </Link>
+            <Link className={styles.link} href='#works'>
+              <a onClick={toggle}>My Work</a>
             </Link>
             <Link className={styles.link} href='#contact'>
-              Contact Me
+              <a onClick={toggle}>Contact Me</a>
             </Link>
           </div>
         </div>
@@ -63,4 +70,4 @@ const LandingNavbar = () => {
   );
 };
 
-export default LandingNavbar;
+export default BlogHomeNavbar;
