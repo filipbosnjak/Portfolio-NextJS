@@ -767,31 +767,12 @@
           box-shadow: 0 5px 15px -5px #00000070;
   color: #185bc9;
   overflow: hidden;
+  position: relative;
 }
 
 .footer .middle .btn:hover i {
-  -webkit-transform: scale(1.3);
-          transform: scale(1.3);
-  color: #f1f1f1;
-}
-
-.footer .middle .btn:hover::before {
-  -webkit-animation: aaa 0.7s 1;
-          animation: aaa 0.7s 1;
-  top: -10%;
-  left: -10%;
-}
-
-.footer .middle .btn::before {
-  content: "";
-  position: absolute;
-  width: 120%;
-  height: 120%;
-  background: #185bc9;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-  right: -110%;
-  top: 90%;
+  -webkit-transform: scale(1.7);
+          transform: scale(1.7);
 }
 
 .footer .middle .btn i {
