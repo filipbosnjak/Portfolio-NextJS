@@ -19,7 +19,7 @@ const Skills = () => {
   return (
     <div>
       <section className={`${styles.section}  ${styles.section2}`}>
-        <div>
+        <div id="skill">
           <h1 className={[styles.sectionTitle, styles.title2].join(" ")}>
             My Skills
           </h1>

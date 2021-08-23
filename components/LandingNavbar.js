@@ -27,31 +27,6 @@ const LandingNavbar = () => {
       window.addEventListener("scroll", scrollListener);
       let toggler = document.querySelector("#toggler");
       toggler.addEventListener("click", toggle);
-
-      //Scrollreveal
-      if (window.innerWidth > 802) {
-        console.log("scroll");
-        window.sr = ScrollReveal();
-
-        sr.reveal(styles.navbarMenu, {
-          duration: 1500,
-          origin: "top",
-          distance: "50px",
-          mobile: false,
-        });
-      }
-      window.onresize = () => {
-        if (window.innerWidth > 800) {
-          window.sr = ScrollReveal();
-
-          sr.reveal(".navbar-menu", {
-            duration: 1500,
-            origin: "top",
-            distance: "50px",
-            mobile: false,
-          });
-        }
-      };
     }
     return () => {
       window.removeEventListener("scroll", scrollListener);
@@ -73,20 +48,20 @@ const LandingNavbar = () => {
           </button>
           <div className={`${styles.navbarMenu} ${isActive}`}>
             <Link className={styles.link} href='/'>
-              Home
+              <a onClick={toggle}>Home</a>
             </Link>
             <Link className={styles.link} href='#about'>
-              About Me
+              <a onClick={toggle}>About Me</a>
             </Link>
             <Link href={"/blog"}>My Blog</Link>
-            <Link className={styles.link} href='#skil'>
-              Skills
+            <Link className={styles.link} href='#skill'>
+              <a onClick={toggle}>Skills</a>
             </Link>
             <Link className={styles.link} href='#works'>
-              My Work
+              <a onClick={toggle}>My Work</a>
             </Link>
             <Link className={styles.link} href='#contact'>
-              Contact Me
+              <a onClick={toggle}>Contact Me</a>
             </Link>
           </div>
         </div>

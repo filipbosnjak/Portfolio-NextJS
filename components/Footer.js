@@ -1,9 +1,27 @@
-import React from "react";
+import { React, useState, useEffect } from "react";
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
 import Slide from "react-reveal/Slide";
+import { FaLocationArrow } from "react-icons/fa";
 
 const Footer = () => {
+  const [visible, setIsVisible] = useState(" ");
+
+  const scrollListener = () => {
+    if (window.scrollY >= 20) {
+      setIsVisible(styles.visible);
+    } else {
+      setIsVisible(" ");
+    }
+  };
+  useEffect(() => {
+    if (process.browser) {
+      window.addEventListener("scroll", scrollListener);
+    }
+    return () => {
+      window.removeEventListener("scroll", scrollListener);
+    };
+  }, [visible]);
   return (
     <>
       <footer className={styles.footer}>
@@ -55,8 +73,13 @@ const Footer = () => {
           </Slide>
         </div>
       </footer>
-
-      <button className={`${styles.goTop} `}></button>
+      <button
+        className={`${styles.goTop} ${visible}`}
+        onClick={() => {
+          scroll(0, 0);
+        }}>
+        <FaLocationArrow />
+      </button>
     </>
   );
 };

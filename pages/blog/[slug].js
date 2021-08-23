@@ -6,6 +6,7 @@ import matter from "gray-matter";
 import Head from "next/head";
 import marked from "marked";
 import Link from "next/link";
+import PostNavbar from "../../components/PostNavbar";
 
 const Post = ({ content, data, html }) => {
   return (
@@ -14,6 +15,7 @@ const Post = ({ content, data, html }) => {
         <title>{data.title}</title>
         <meta title='description' content={data.description} />
       </Head>
+      <PostNavbar/>
         <h1>dangerouslySetInnerHTML: </h1>
         <div dangerouslySetInnerHTML={{ __html: content }}></div>
         <Link href='/'>Go back</Link>

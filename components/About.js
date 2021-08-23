@@ -7,7 +7,7 @@ import Slide from "react-reveal/Slide";
 const About = () => {
   return (
     <section className={styles.section}>
-      <div className={styles.about}>
+      <div id='about' className={styles.about}>
         <h1 className={styles.sectionTitle}>About Me</h1>
         <div className={styles.aboutContent}>
           <Slide left>

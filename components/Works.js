@@ -22,7 +22,7 @@ import weatherApp from "../images/works/weatherApp.png";
 const Works = () => {
   return (
     <section className={`${styles.works} ${styles.light} ${styles.section}`}>
-      <div>
+      <div id="works">
         <h1 className={`${styles.sectionTitle} ${styles.title4}`}>My Work</h1>
         <div className={styles.works}>
           <a
