@@ -8,16 +8,7 @@
 
   .title4 {
     color: $main-white;
-
-    &::before {
-      content: "";
-      position: absolute;
-      width: 110px;
-      height: 3px;
-      background-color: $main-white;
-      bottom: 0;
-      left: calc(50%-40px);
-    }
+    border-bottom: 1px solid white;
   }
 
   .works {
@@ -71,6 +62,7 @@
     img {
       width: 100%;
       transition: 0.4s linear;
+      z-index: 1;
     }
   }
 }
