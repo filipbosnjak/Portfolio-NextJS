@@ -848,6 +848,12 @@
   }
 }
 
+.landingSection {
+  width: 100%;
+  height: 110vh;
+  background-color: yellow;
+}
+
 .goTop {
   position: fixed;
   z-index: 9999;

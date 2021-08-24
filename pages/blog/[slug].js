@@ -4,19 +4,19 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Head from "next/head";
-import marked from "marked";
 import Link from "next/link";
 import PostNavbar from "../../blog_components/PostNavbar";
+import PostLandingSection from "../../blog_components/PostLandingSection";
 
 const Post = ({ content, data, html }) => {
-  console.log(content)
-  return (
+    return (
     <>
       <Head>
         <title>{data.title}</title>
         <meta title='description' content={data.description} />
       </Head>
       <PostNavbar/>
+      <PostLandingSection/>
         <h1>dangerouslySetInnerHTML: </h1>
         <div dangerouslySetInnerHTML={{ __html: content }}></div>
         <Link href='/'>Go back</Link>
