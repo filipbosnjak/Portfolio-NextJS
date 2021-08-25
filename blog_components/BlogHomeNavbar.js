@@ -2,6 +2,7 @@ import { React, useState, useEffect } from "react";
 
 import styles from "../styles/Home.module.scss";
 import Link from "next/link";
+import BlogHead from "./BlogHead"
 
 const BlogHomeNavbar = () => {
   const [isSticky, setIsSticky] = useState("");
@@ -38,6 +39,8 @@ const BlogHomeNavbar = () => {
   }, [isActive]);
 
   return (
+    <>
+    <BlogHead />
     <div className={styles.container}>
       <nav className={`${styles.navbar} ${isSticky}`}>
         <div className=''>
@@ -48,7 +51,7 @@ const BlogHomeNavbar = () => {
           </button>
           <div className={`${styles.navbarMenu} ${isActive}`}>
             <Link className={styles.link} href='/'>
-              <a onClick={toggle}>Home</a>
+              <a onClick={toggle}></a>
             </Link>
             <Link className={styles.link} href='#about'>
               <a onClick={toggle}>About Me</a>
@@ -67,6 +70,7 @@ const BlogHomeNavbar = () => {
         </div>
       </nav>
     </div>
+    </>
   );
 };
 

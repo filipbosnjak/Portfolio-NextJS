@@ -839,7 +839,7 @@
       flex-wrap: wrap;
   width: 100%;
   height: 100vh;
-  margin-top: 170px;
+  margin-top: 90px;
 }
 
 @media (max-width: 800px) {
@@ -851,7 +851,10 @@
 .landingSection {
   width: 100%;
   height: 110vh;
-  background-color: yellow;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../../images/bg.jpg) no-repeat center;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../images/bg.jpg) no-repeat center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 .goTop {
@@ -903,8 +906,8 @@
 
 .container .card {
   position: relative;
-  width: 300px;
-  height: 450px;
+  width: 380px;
+  height: 500px;
   background-color: rgba(255, 255, 255, 0.04);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -932,14 +935,18 @@
   overflow: hidden;
 }
 
+.container .card .content .img {
+  display: none;
+}
+
 .container .card .content h2 {
   position: absolute;
   right: 30px;
-  font-size: 4em;
+  font-size: 35px;
   font-weight: 400;
   color: #1779ff;
   z-index: 1;
-  opacity: 0.1;
+  opacity: 0;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
@@ -952,6 +959,11 @@
   opacity: 0.3;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  margin: 20px 0;
+}
+
+.container .card .content .img {
+  border-radius: 10px;
 }
 
 .container .card .content p {
@@ -963,6 +975,7 @@
   -webkit-transition: 0.3s;
   transition: 0.3s;
   font-weight: 200;
+  margin: 30px 0;
 }
 
 .container .card .content .button {
@@ -980,7 +993,7 @@
   width: 50%;
   background: none;
   border: none;
-  bottom: 30px;
+  bottom: 15px;
 }
 
 .container .card .content .button a {
@@ -996,6 +1009,7 @@
   -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
   text-decoration: none;
+  margin: 10px 0;
 }
 
 .container .card .content .button a:hover {
@@ -1075,8 +1089,8 @@
 
 .container .card:hover .content h2 {
   opacity: 1;
-  -webkit-transform: translateY(-130px);
-          transform: translateY(-130px);
+  -webkit-transform: translateY(-242px);
+          transform: translateY(-242px);
 }
 
 .container .card:hover .content h3,
@@ -1169,6 +1183,12 @@
   100% {
     -webkit-transform: translateY(-100%);
             transform: translateY(-100%);
+  }
+}
+
+@media (max-width: 800px) {
+  .container .card .content p {
+    margin: 20px 0;
   }
 }
 /*# sourceMappingURL=Home.module.css.map */

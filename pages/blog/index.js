@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import Image from "next/image";
+import BlogHead from "../../blog_components/BlogHead";
 
 const BlogHome = ({ slugs, markdownWithMetaData }) => {
   const [isSticky, setIsSticky] = useState("");
@@ -44,72 +45,76 @@ const BlogHome = ({ slugs, markdownWithMetaData }) => {
   });
   //console.log(" mark", markdownWithMetaData)
   return (
-    <div className={styles.container}>
-      <nav className={`${styles.navbar} ${isSticky}`}>
-        <div className=''>
-          <button id='toggler' className={`${styles.menuToggler} ${isActive}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
+    <>
+      <BlogHead />
+      <div className={styles.container}>
+        <nav className={`${styles.navbar} ${isSticky}`}>
+          <div className=''>
+            <button
+              id='toggler'
+              className={`${styles.menuToggler} ${isActive}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
 
-          <div className={`${styles.navbarMenu} ${isActive}`}>
-            <Link className={styles.link} href='/'>
-              <a onClick={toggle}>Home</a>
-            </Link>
-            <Link className={styles.link} href='/'>
-              <a onClick={toggle}>About Me</a>
-            </Link>
-            <Link className={styles.link} href='/'>
-              <a onClick={toggle}>Skills</a>
-            </Link>
-            <Link className={styles.link} href='/'>
-              <a onClick={toggle}>My Work</a>
-            </Link>
-            <Link className={styles.link} href='/'>
-              <a onClick={toggle}>Contact Me</a>
-            </Link>
-          </div>
-        </div>
-      </nav>
-      <div className={styles.showcase}>
-        {slugs.map((slug, i) => {
-          // console.log(slug);
-
-          // console.log(marked[i].data.postTitle);
-          return (
-            <div key={slug} className={styles.card}>
-              <span></span>
-              <span></span>
-              <span></span>
-              <span></span>
-              <div className={styles.content}>
-                <Image
-                  src={`/${slug}.jpg`}
-                  alt='Filip Bošnjak'
-                  className={styles.aboutPic}
-                  width='100%'
-                  height='50%'
-                  layout='responsive'
-                />
-                <h2>012</h2>
-
-                <h3>{marked[i].data.postTitle}</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis,
-                  neque?
-                </p>
-                <button className={styles.button}>
-                  <Link href={"/blog/" + slug}>
-                    <a>{slug}</a>
-                  </Link>
-                </button>
-              </div>
+            <div className={`${styles.navbarMenu} ${isActive}`}>
+              <Link className={styles.link} href='/'>
+                <a onClick={toggle}>
+                  <p>Home</p>
+                </a>
+              </Link>
+              <Link className={styles.link} href='/'>
+                <a onClick={toggle}>About Me</a>
+              </Link>
+              <Link className={styles.link} href='/'>
+                <a onClick={toggle}>Skills</a>
+              </Link>
+              <Link className={styles.link} href='/'>
+                <a onClick={toggle}>My Work</a>
+              </Link>
+              <Link className={styles.link} href='/'>
+                <a onClick={toggle}>Contact Me</a>
+              </Link>
             </div>
-          );
-        })}
+          </div>
+        </nav>
+        <div className={styles.showcase}>
+          {slugs.map((slug, i) => {
+            // console.log(slug);
+
+            // console.log(marked[i].data.postTitle);
+            return (
+              <div key={slug} className={styles.card}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <div className={styles.content}>
+                  <Image
+                    src={`/${slug}.jpg`}
+                    alt='Filip Bošnjak'
+                    className={styles.img}
+                    width='100%'
+                    height='60%'
+                    layout='responsive'
+                  />
+                  <h2>{marked[i].data.label}</h2>
+
+                  <h3>{marked[i].data.postTitle}</h3>
+                  <p>{marked[i].data.shortIntro}</p>
+                  <button className={styles.button}>
+                    <Link href={"/blog/" + slug}>
+                      <a>Read more</a>
+                    </Link>
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
