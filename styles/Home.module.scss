@@ -9,7 +9,9 @@
 @import "./partials/poweredby";
 @import "./partials/footer";
 @import "./partials/blogHome";
-@import "./partials/post";
+@import "./partials/blogNavbar";
+@import "./partials/blogFooter";
+@import "./partials/blogPost";
 
 @import "./partials/toTopBtn";
 
@@ -46,16 +48,18 @@
       padding: 30px;
       text-align: center;
       overflow: hidden;
+      padding-top: 50px;
 
       .img {
         display: none;
+        margin-top: 10px;
       }
 
       h2 {
         position: absolute;
         right: 30px;
-        font-size: 35px;
-        font-weight: 400;
+        font-size: 30px;
+        font-weight: 300;
         color: #1779ff;
         z-index: 1;
         opacity: 0;
@@ -68,10 +72,11 @@
         z-index: 2;
         opacity: 0.3;
         transition: 0.3s;
-        margin: 20px 0;
+        margin: 10px 0;
       }
       .img {
         border-radius: 10px;
+        margin-top: 20px;
       }
       p {
         position: relative;
@@ -81,7 +86,8 @@
         opacity: 0.3;
         transition: 0.3s;
         font-weight: 200;
-        margin: 30px 0;
+        margin: 10px 0;
+        margin-bottom: 70px;
       }
       .button {
         display: inline-block;

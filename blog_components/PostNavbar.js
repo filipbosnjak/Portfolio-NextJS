@@ -39,8 +39,7 @@ const LandingNavbar = () => {
 
   return (
     <div className={styles.container}>
-      <nav className={`${styles.navbar} ${isSticky}`}>
-        <div className=''>
+      <div className={`${styles.blogNavbar} ${isSticky}`}>
           <button id='toggler' className={`${styles.menuToggler} ${isActive}`}>
             <span></span>
             <span></span>
@@ -53,12 +52,11 @@ const LandingNavbar = () => {
             <Link className={styles.link} href='/blog'>
               See more
             </Link>
-            <Link className={styles.link} href='/'>
+            <Link className={styles.link} href='/#contact'>
               Contact Me
             </Link>
           </div>
-        </div>
-      </nav>
+      </div>
     </div>
   );
 };
