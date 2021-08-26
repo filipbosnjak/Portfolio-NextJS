@@ -64,16 +64,16 @@ const BlogHome = ({ slugs, markdownWithMetaData }) => {
                   <p>Home</p>
                 </a>
               </Link>
-              <Link className={styles.link} href='/'>
+              <Link className={styles.link} href='/#about'>
                 <a onClick={toggle}>About Me</a>
               </Link>
-              <Link className={styles.link} href='/'>
+              <Link className={styles.link} href='/#skill'>
                 <a onClick={toggle}>Skills</a>
               </Link>
-              <Link className={styles.link} href='/'>
+              <Link className={styles.link} href='/#works'>
                 <a onClick={toggle}>My Work</a>
               </Link>
-              <Link className={styles.link} href='/'>
+              <Link className={styles.link} href='/#contact'>
                 <a onClick={toggle}>Contact Me</a>
               </Link>
             </div>

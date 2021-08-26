@@ -35,10 +35,10 @@ const PostLandingSection = ({ data }) => {
             </div>
           </div>
           <div className={styles.social}>
-            <div className={styles.icon}>F</div>
-            <div className={styles.icon}>L</div>
-            <div className={styles.icon}>T</div>
-            <div className={styles.icon}>G</div>
+            <div className={styles.icon}>Fb</div>
+            <div className={styles.icon}>Li</div>
+            <div className={styles.icon}>Tw</div>
+            <div className={styles.icon}>Go</div>
           </div>
         </div>
       </div>

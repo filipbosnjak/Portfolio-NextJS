@@ -53,17 +53,17 @@ const BlogHomeNavbar = () => {
             <Link className={styles.link} href='/'>
               <a onClick={toggle}></a>
             </Link>
-            <Link className={styles.link} href='#about'>
+            <Link className={styles.link} href='/#about'>
               <a onClick={toggle}>About Me</a>
             </Link>
             <Link href={"/blog"}>My Blog</Link>
-            <Link className={styles.link} href='#skill'>
+            <Link className={styles.link} href='/#skill'>
               <a onClick={toggle}>Skills</a>
             </Link>
-            <Link className={styles.link} href='#works'>
+            <Link className={styles.link} href='/#works'>
               <a onClick={toggle}>My Work</a>
             </Link>
-            <Link className={styles.link} href='#contact'>
+            <Link className={styles.link} href='/#contact'>
               <a onClick={toggle}>Contact Me</a>
             </Link>
           </div>

@@ -33,14 +33,16 @@ const Post = ({ content, data, html }) => {
       <PostLandingSection data={data} />
       <div className={styles.postContainer}>
         <div className={styles.leftSidebar}></div>
-        <div className={styles.postText}></div>
+        <div className={styles.postText}>
+          <div dangerouslySetInnerHTML={{ __html: content }}></div>
+        </div>
         <div className={styles.rightSidebar}>
           <div className={styles.ads}></div>
           <div className={styles.readMore}></div>
         </div>
       </div>
       <h1>dangerouslySetInnerHTML: </h1>
-      <div dangerouslySetInnerHTML={{ __html: content }}></div>
+
       <PostFooter />
     </>
   );

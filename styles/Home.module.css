@@ -1092,6 +1092,9 @@
 .landingSection .postContact .social .icon {
   margin: 3px;
   border: white solid 1px;
+  width: 30px;
+  height: 25px;
+  text-align: center;
 }
 
 .postContainer {
@@ -1114,8 +1117,9 @@
 }
 
 .postContainer .postText {
-  border: 1px solid white;
   width: 100%;
+  color: white;
+  font-size: 20px;
 }
 
 .postContainer .rightSidebar {
