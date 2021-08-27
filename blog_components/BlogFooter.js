@@ -4,7 +4,7 @@ import Link from "next/link";
 import Slide from "react-reveal/Slide";
 import { FaLocationArrow } from "react-icons/fa";
 
-const PostFooter = () => {
+const BlogFooter = () => {
   const [visible, setIsVisible] = useState(" ");
 
   const scrollListener = () => {
@@ -84,4 +84,4 @@ const PostFooter = () => {
   );
 };
 
-export default PostFooter;
+export default BlogFooter

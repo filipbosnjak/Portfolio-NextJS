@@ -9,8 +9,11 @@ import Link from "next/link";
 import PostNavbar from "../../blog_components/PostNavbar";
 import PostLandingSection from "../../blog_components/PostLandingSection";
 import PostFooter from "../../blog_components/PostFooter";
+import Image from "next/image";
+import Slide from "react-reveal/Slide";
 
-const Post = ({ content, data, html }) => {
+const Post = ({ content, data, html, allPostsData }) => {
+  console.log("slug" + allPostsData[1].slug);
   return (
     <>
       <Head>
@@ -33,16 +36,60 @@ const Post = ({ content, data, html }) => {
       <PostLandingSection data={data} />
       <div className={styles.postContainer}>
         <div className={styles.leftSidebar}></div>
-        <div className={styles.postText}>
-          <div dangerouslySetInnerHTML={{ __html: content }}></div>
-        </div>
+        <Slide bottom>
+          <div className={styles.postText}>
+            <div dangerouslySetInnerHTML={{ __html: content }}></div>
+          </div>
+        </Slide>
+
         <div className={styles.rightSidebar}>
           <div className={styles.ads}></div>
-          <div className={styles.readMore}></div>
+          <div className={styles.readMore}>
+            <div className={styles.readMore}>Read More</div>
+            <div className={styles.readMoreCards}>
+              <div className={styles.container}>
+                {allPostsData.map((item, i) => {
+                  // console.log(slug);
+
+                  // console.log(marked[i].data.postTitle);
+                  if (i < 2) {
+                    return (
+                      <Slide bottom>
+                        <div key={item.slug} className={styles.card}>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <span></span>
+                          <div className={styles.content}>
+                            <Image
+                              src={`/${item.slug}.jpg`}
+                              alt='Filip Bošnjak'
+                              className={styles.img}
+                              width='100%'
+                              height='60%'
+                              layout='responsive'
+                            />
+                            <h2>{item.label}</h2>
+
+                            <h3>{item.postTitle}</h3>
+                            <p>{item.shortIntro}</p>
+                            <button className={styles.button}>
+                              <Link href={"/blog/" + item.slug}>
+                                <a>Read more</a>
+                              </Link>
+                            </button>
+                          </div>
+                        </div>
+                      </Slide>
+                    );
+                  }
+                })}
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <h1>dangerouslySetInnerHTML: </h1>
-
+      <div className={styles.line}></div>
       <PostFooter />
     </>
   );
@@ -64,17 +111,32 @@ export const getStaticPaths = async () => {
 
 //Function returning props to the post component - data feeding
 export const getStaticProps = async ({ params: { slug } }) => {
+  //Getting info about all the files
+  const files = fs.readdirSync("posts");
+  const paths = files.map((filename) => {
+    return filename.replace(".md", "").replace(".html", "");
+  });
+
+  const markdownWithMetaDataAll = paths.map((filename) => {
+    return fs.readFileSync(path.join("posts", filename + ".html")).toString();
+  });
+  const markedAllData = markdownWithMetaDataAll.map((item) => {
+    item = matter(item);
+    return item.data;
+  });
+
   //path.join - handles / and \ in the path
   const markdownWithMetaData = fs
     .readFileSync(path.join("posts", slug + ".html"))
     .toString();
   const parsedMarkdown = matter(markdownWithMetaData);
-  console.log(parsedMarkdown);
+  //console.log("marAll", markedAllData);
   return {
     props: {
       content: parsedMarkdown.content,
       data: parsedMarkdown.data,
       html: markdownWithMetaData,
+      allPostsData: markedAllData,
     },
   };
 };

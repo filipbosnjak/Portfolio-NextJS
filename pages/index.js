@@ -23,7 +23,6 @@ export default function Home({ slugs }) {
       <Contact />
       <PoweredBy />
       <Footer />
-      <Link href={"/blog"}>asd</Link>
     </>
   );
 }
