@@ -159,16 +159,16 @@
   color: #185bc9 !important;
 }
 
-.sticky {
+.stickyLanding {
   background-color: #f1f1f1;
   padding: 15px 0;
 }
 
-.sticky .navbarMenu a {
+.stickyLanding .navbarMenu a {
   color: #111;
 }
 
-.sticky .menuToggler span {
+.stickyLanding .menuToggler span {
   color: #111;
 }
 
@@ -216,16 +216,18 @@
     left: 0;
     z-index: 998;
   }
-  .sticky {
+  .stickyLanding {
+    background-color: #f1f1f1;
     padding: 10px 0;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    z-index: 9999;
   }
-  .sticky .menuToggler {
-    margin-top: 5px;
-  }
-  .sticky .menuToggler span {
+  .stickyLanding .menuToggler span {
     background-color: black;
   }
-  .sticky .navbarMenu a {
+  .stickyLanding .navbarMenu a {
     color: white;
   }
 }
@@ -838,7 +840,7 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
-  height: 100vh;
+  height: auto;
   margin-top: 90px;
 }
 
@@ -866,7 +868,6 @@
 }
 
 .blogNavbar .menuToggler {
-  position: relative;
   cursor: pointer;
   background: none;
   width: 30px;
@@ -922,7 +923,11 @@
 
 .sticky {
   background-color: #f1f1f1;
-  padding: 15px 0;
+  padding: 25px 0;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 9999;
 }
 
 .sticky .navbarMenu a {
@@ -944,6 +949,9 @@
   .blogNavbar .menuToggler {
     margin-left: 10px;
     display: block;
+    position: absolute;
+    top: 30px;
+    left: 10px;
   }
   .blogNavbar .navbarMenu {
     position: fixed;
@@ -978,10 +986,10 @@
     z-index: 998;
   }
   .sticky {
-    padding: 10px 0;
+    padding: 30px 0;
   }
   .sticky .menuToggler {
-    margin-top: 5px;
+    margin-top: -15px;
   }
   .sticky .menuToggler span {
     background-color: black;
@@ -992,22 +1000,114 @@
 }
 
 .blogFooter {
-  height: 50vh;
+  -webkit-backdrop-filter: blur(25px);
+          backdrop-filter: blur(25px);
+  color: #fff;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.blogFooter .copyright {
+  padding: 75px 0 75px 0;
+  font-size: 20px;
+}
+
+.blogFooter .copyright a {
+  font-size: 19px;
+  color: var(--main-color);
+  font-weight: 500;
+}
+
+.blogFooter .middle {
+  padding-bottom: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.blogFooter .middle .btn {
+  display: inline-block;
+  width: 90px;
+  height: 90px;
+  background: #f1f1f1;
+  margin: 10px;
+  border-radius: 30%;
+  -webkit-box-shadow: 0 5px 15px -5px #00000070;
+          box-shadow: 0 5px 15px -5px #00000070;
+  color: #185bc9;
+  overflow: hidden;
+  position: relative;
+}
+
+.blogFooter .middle .btn:hover i {
+  -webkit-transform: scale(1.7);
+          transform: scale(1.7);
+}
+
+.blogFooter .middle .btn i {
+  line-height: 90px;
+  font-size: 26px;
+  -webkit-transition: 0.15s linear;
+  transition: 0.15s linear;
+}
+
+.blogFooter .line {
   width: 100%;
-  background-color: grey;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(10%, #1c1c1c), color-stop(360%, #494949));
-  background: linear-gradient(360deg, #1c1c1c 10%, #494949 360%);
-  color: white;
+  height: 0.1vh;
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 1px;
+}
+
+@keyframes aaa {
+  0% {
+    left: -110%;
+    top: 90%;
+  }
+  50% {
+    left: 10%;
+    top: -30%;
+  }
+  100% {
+    top: -10%;
+    left: -10%;
+  }
+}
+
+@media (max-width: 800px) {
+  .blogFooter .copyright {
+    padding: 70px 0;
+    margin-top: 1px;
+  }
+  .blogFooter .middle {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: 0;
+    margin-top: 50px;
+  }
+  .blogFooter .middle .btn::before {
+    display: none;
+  }
+  .blogFooter .middle .btn:hover i {
+    color: #185bc9 !important;
+  }
+  .line {
+    width: 100%;
+    height: 0.1vh;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 1px;
+  }
 }
 
 .landingSection {
   width: 100%;
-  height: 50vh;
+  height: auto;
   margin-top: 150px;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../../images/bg.jpg) no-repeat center;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../../images/bg.jpg) no-repeat center;
-  background-size: cover;
-  background-attachment: fixed;
+  margin-bottom: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1042,6 +1142,7 @@
   color: white;
   font-size: 70px;
   font-weight: 300;
+  margin-bottom: 10px;
 }
 
 .landingSection .postContact {
@@ -1072,7 +1173,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50px;
-  margin-right: 10px;
+  margin-right: 20px;
 }
 
 .landingSection .postContact .personalInfo .text {
@@ -1080,10 +1181,14 @@
 }
 
 .landingSection .postContact .social {
-  color: white;
+  color: #185bc9;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -1091,17 +1196,35 @@
 
 .landingSection .postContact .social .icon {
   margin: 3px;
-  border: white solid 1px;
+  background-color: white;
+  border-radius: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 30px;
-  height: 25px;
+  height: 30px;
   text-align: center;
+  -webkit-transition: linear 0.2s;
+  transition: linear 0.2s;
+}
+
+.landingSection .postContact .social .icon:hover {
+  color: #185bc9;
+  cursor: pointer;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .postContainer {
   height: 150vh;
   width: 100%;
   margin: 0 auto;
-  border: 1px white solid;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1112,19 +1235,27 @@
 }
 
 .postContainer .leftSidebar {
-  border: 1px solid white;
-  width: 70%;
+  width: 68%;
 }
 
 .postContainer .postText {
   width: 100%;
   color: white;
   font-size: 20px;
+  line-height: 1.7;
+  -webkit-box-shadow: 20px 20px 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 20px 20px 25px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  overflow: hidden;
+  padding: 5px;
+  border-radius: 30px;
+  position: relative;
+  z-index: 1;
 }
 
 .postContainer .rightSidebar {
-  border: 1px solid white;
-  width: 70%;
+  width: 68%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1135,13 +1266,296 @@
 }
 
 .postContainer .rightSidebar .ads {
-  height: 30vh;
-  border: 1px solid white;
+  height: 0vh;
 }
 
 .postContainer .rightSidebar .readMore {
-  height: 100vh;
-  border: 1px solid white;
+  color: white;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  padding-top: 5px;
+}
+
+.postContainer .rightSidebar .readMore .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.postContainer .rightSidebar .readMore .container:hover span {
+  opacity: 0.5;
+}
+
+.postContainer .rightSidebar .readMore .container .card {
+  position: relative;
+  width: 380px;
+  height: 500px;
+  background-color: rgba(255, 255, 255, 0.04);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px;
+  -webkit-box-shadow: 20px 20px 25px rgba(0, 0, 0, 0.2);
+          box-shadow: 20px 20px 25px rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(15px);
+          backdrop-filter: blur(15px);
+  overflow: hidden;
+  border-radius: 30px;
+  -webkit-transition: linear 0.4s;
+  transition: linear 0.4s;
+}
+
+.postContainer .rightSidebar .readMore .container .card .content {
+  padding: 30px;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 50px;
+}
+
+.postContainer .rightSidebar .readMore .container .card .content .img {
+  display: none;
+  margin-top: 10px;
+}
+
+.postContainer .rightSidebar .readMore .container .card .content h2 {
+  position: absolute;
+  right: 30px;
+  font-size: 30px;
+  font-weight: 300;
+  color: #1779ff;
+  z-index: 1;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.postContainer .rightSidebar .readMore .container .card .content h3 {
+  position: relative;
+  font-size: 32px;
+  font-weight: 300;
+  color: white;
+  z-index: 2;
+  opacity: 0.3;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin: 10px 0;
+}
+
+.postContainer .rightSidebar .readMore .container .card .content .img {
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.postContainer .rightSidebar .readMore .container .card .content p {
+  position: relative;
+  font-size: 1em;
+  color: white;
+  z-index: 2;
+  opacity: 0.3;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  font-weight: 200;
+  margin: 10px 0;
+  margin-bottom: 70px;
+}
+
+.postContainer .rightSidebar .readMore .container .card .content .button {
+  display: inline-block;
+  position: absolute;
+  margin-top: 55px;
+  background: white;
+  color: #0c002b;
+  text-decoration: none;
+  text-transform: uppercase;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  background: none;
+  border: none;
+  bottom: 15px;
+}
+
+.postContainer .rightSidebar .readMore .container .card .content .button a {
+  display: inline-block;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  width: 100%;
+  border: 1px solid;
+  border-color: #185bc9;
+  padding: 14px 0;
+  border-radius: 6px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+  text-decoration: none;
+  margin: 10px 0;
+}
+
+.postContainer .rightSidebar .readMore .container .card .content .button a:hover {
+  background-color: #185bc9;
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.postContainer .rightSidebar .readMore .container .card span {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  opacity: 0;
+}
+
+.postContainer .rightSidebar .readMore .container .card span:nth-child(1) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 3px;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), to(#185bc9));
+  background: linear-gradient(to right, transparent, #185bc9);
+  -webkit-animation: animation1 2s linear infinite;
+          animation: animation1 2s linear infinite;
+}
+
+.postContainer .rightSidebar .readMore .container .card span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(#185bc9));
+  background: linear-gradient(to bottom, transparent, #185bc9);
+  -webkit-animation: animation2 2s linear infinite;
+          animation: animation2 2s linear infinite;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.postContainer .rightSidebar .readMore .container .card span:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: -webkit-gradient(linear, right top, left top, from(transparent), to(#185bc9));
+  background: linear-gradient(to left, transparent, #185bc9);
+  -webkit-animation: animation3 2s linear infinite;
+          animation: animation3 2s linear infinite;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.postContainer .rightSidebar .readMore .container .card span:nth-child(4) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(transparent), to(#185bc9));
+  background: linear-gradient(to top, transparent, #185bc9);
+  -webkit-animation: animation4 2s linear infinite;
+          animation: animation4 2s linear infinite;
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+.postContainer .rightSidebar .readMore .container .card:hover {
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
+}
+
+.postContainer .rightSidebar .readMore .container .card:hover span {
+  opacity: 1;
+}
+
+.postContainer .rightSidebar .readMore .container .card:hover .content h2 {
+  opacity: 1;
+  -webkit-transform: translateY(-242px);
+          transform: translateY(-242px);
+}
+
+.postContainer .rightSidebar .readMore .container .card:hover .content h3,
+.postContainer .rightSidebar .readMore .container .card:hover .content p {
+  opacity: 1;
+}
+
+@media (max-width: 800px) {
+  .landingSection {
+    margin-top: 50px;
+  }
+  .landingSection .landingContainer {
+    width: 80%;
+  }
+  .landingSection .title {
+    font-size: 55px;
+  }
+  .landingSection .postContact .social {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .postContainer {
+    display: block;
+    margin-top: 60px;
+    height: auto;
+  }
+  .postContainer .postText {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .postContainer .rightSidebar {
+    width: 100%;
+  }
+  .postContainer .rightSidebar .readMore {
+    display: block;
+    margin: 5px 0px;
+  }
+  .postContainer .rightSidebar .readMore .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .postContainer .rightSidebar .readMore .container .card {
+    width: 48%;
+    height: 350px;
+    margin: 2px;
+  }
+  .postContainer .rightSidebar .readMore .container .card .content h3 {
+    font-size: 20px;
+    opacity: 1;
+    margin: 2px;
+  }
+  .postContainer .rightSidebar .readMore .container .card .content .img {
+    margin-top: 0;
+  }
+  .postContainer .rightSidebar .readMore .container .card .content p {
+    font-size: 15px;
+  }
+  .postContainer .rightSidebar .readMore .container .card .content .button {
+    width: 75%;
+  }
 }
 
 .goTop {
@@ -1478,8 +1892,16 @@
 }
 
 @media (max-width: 800px) {
+  .container .card .content h3 {
+    margin: 2px 0;
+    opacity: 1;
+    font-weight: 400;
+  }
   .container .card .content p {
-    margin: 20px 0;
+    margin: 10px 0;
+  }
+  .container .card .content .button {
+    bottom: 2px;
   }
 }
 /*# sourceMappingURL=Home.module.css.map */

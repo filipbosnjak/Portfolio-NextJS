@@ -9,7 +9,7 @@ const LandingNavbar = () => {
 
   const scrollListener = () => {
     if (window.scrollY >= 20) {
-      setIsSticky(styles.sticky);
+      setIsSticky(styles.stickyLanding);
     } else {
       setIsSticky(" ");
     }

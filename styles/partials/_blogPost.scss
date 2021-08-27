@@ -1,7 +1,8 @@
 .landingSection {
   width: 100%;
-  height: 50vh;
+  height: auto;
   margin-top: 150px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   .landingContainer {
@@ -46,20 +47,26 @@
       }
     }
     .social {
-      color: white;
+      color: $main-blue;
       display: flex;
       flex-direction: row;
       justify-content: center;
       .icon {
         margin: 3px;
+        background-color: white;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         //border: white solid 1px;
         width: 30px;
-        height: 25px;
+        height: 30px;
         text-align: center;
         transition: linear 0.2s;
         &:hover {
           color: $main-blue;
           cursor: pointer;
+          transform: scale(1.1);
         }
       }
     }
@@ -301,7 +308,7 @@
   }
   .postContainer {
     display: block;
-    margin-top: 20px;
+    margin-top: 60px;
     height: auto;
     .postText {
       width: 90%;
