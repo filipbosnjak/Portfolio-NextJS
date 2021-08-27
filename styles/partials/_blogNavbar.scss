@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   .menuToggler {
-    position: relative;
+    //position: relative;
     cursor: pointer;
     background: none;
     width: 30px;
@@ -76,9 +76,13 @@
     display: flex;
     width: 100%;
     z-index: 999;
+    //position: relative;
     .menuToggler {
       margin-left: 10px;
       display: block;
+      position: absolute;
+      top: 30px;
+      left: 10px;
     }
     .navbarMenu {
       position: fixed;
@@ -109,9 +113,9 @@
     z-index: 998;
   }
   .sticky {
-    padding: 10px 0;
+    padding: 30px 0;
     .menuToggler {
-      margin-top: 5px;
+      margin-top: -15px;
       span {
         background-color: black;
       }
