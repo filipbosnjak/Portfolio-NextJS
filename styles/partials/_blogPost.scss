@@ -48,7 +48,7 @@
     .social {
       color: white;
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       justify-content: center;
       .icon {
         margin: 3px;
@@ -293,16 +293,52 @@
     .title {
       font-size: 55px;
     }
+    .postContact {
+      .social {
+        flex-direction: column;
+      }
+    }
   }
   .postContainer {
     display: block;
     margin-top: 20px;
+    height: auto;
     .postText {
-      width: 95%;
+      width: 90%;
       margin: 0 auto;
     }
     .rightSidebar {
       width: 100%;
+      .readMore {
+        display: block;
+        margin: 5px 0px;
+        .container {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .card {
+            width: 48%;
+            height: 350px;
+            margin: 2px;
+            .content {
+              h3 {
+                font-size: 20px;
+                opacity: 1;
+                margin: 2px;
+              }
+              .img {
+                margin-top: 0;
+              }
+              p {
+                font-size: 15px;
+              }
+              .button {
+                width: 75%;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }

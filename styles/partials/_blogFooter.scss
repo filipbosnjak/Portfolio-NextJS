@@ -75,24 +75,32 @@
 }
 
 @include mobile {
-  .middle {
-    flex-wrap: wrap;
-    .btn {
-      &::before {
-        display: none;
-      }
-      &:hover {
-        i {
-          color: $main-blue !important;
+  .blogFooter {
+    .copyright {
+      padding: 50px 0;
+      margin-top: 1px;
+    }
+    .middle {
+      flex-wrap: wrap;
+      margin: 0;
+      margin-top: 100px;
+      .btn {
+        &::before {
+          display: none;
+        }
+        &:hover {
+          i {
+            color: $main-blue !important;
+          }
         }
       }
     }
   }
-}
-.line {
-  width: 100%;
-  height: 0.1vh;
-  background-color: white;
-  margin-top: 20px;
-  margin-bottom: 1px;
+  .line {
+    width: 100%;
+    height: 0.1vh;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 1px;
+  }
 }
