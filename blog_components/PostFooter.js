@@ -25,9 +25,10 @@ const PostFooter = () => {
   return (
     <>
       <footer className={styles.blogFooter}>
+        <div className={styles.line}></div>
         <div>
           <div className={styles.copyright}>
-            &copy; 2020 | Created & Designed By{" "}
+            &copy; 2021 | Created & Designed By{" "}
             <Link href={"/blog"}>Filip Bošnjak</Link>
           </div>
           <Slide bottom cascade>

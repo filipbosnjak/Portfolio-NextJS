@@ -89,7 +89,6 @@ const Post = ({ content, data, html, allPostsData }) => {
           </div>
         </div>
       </div>
-      <div className={styles.line}></div>
       <PostFooter />
     </>
   );

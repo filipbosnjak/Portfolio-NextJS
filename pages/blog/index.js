@@ -6,6 +6,7 @@ import path from "path";
 import matter from "gray-matter";
 import Image from "next/image";
 import BlogHead from "../../blog_components/BlogHead";
+import PostFooter from "../../blog_components/PostFooter";
 
 const BlogHome = ({ slugs, markdownWithMetaData }) => {
   const [isSticky, setIsSticky] = useState("");
@@ -114,6 +115,7 @@ const BlogHome = ({ slugs, markdownWithMetaData }) => {
           })}
         </div>
       </div>
+      <PostFooter />
     </>
   );
 };
