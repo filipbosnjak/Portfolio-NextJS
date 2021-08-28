@@ -2,6 +2,20 @@ import React from "react";
 import styles from "../styles/Home.module.scss";
 
 const Contact = () => {
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const messageObject = {
+      fromName: e.target[0].value,
+      from: e.target[1].value,
+      subject: e.target[2].value,
+      message: e.target[3].value
+    }
+    await fetch('/api/mail', {
+      method:'POST',
+      body: JSON.stringify(messageObject)
+    })
+  }
   return (
     <section className={`${styles.contact} ${styles.section}`}>
       <div id="contact">
@@ -25,7 +39,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <form action='#' className={styles.contactForm}>
+        <form action='#' className={styles.contactForm} onSubmit={handleSubmit}>
           <input
             type='text'
             className={styles.nameZone}
