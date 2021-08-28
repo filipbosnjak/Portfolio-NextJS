@@ -7,6 +7,7 @@ import matter from "gray-matter";
 import Image from "next/image";
 import BlogHead from "../../blog_components/BlogHead";
 import PostFooter from "../../blog_components/PostFooter";
+import Slide from "react-reveal/Slide";
 
 const BlogHome = ({ slugs, markdownWithMetaData }) => {
   const [isSticky, setIsSticky] = useState("");
@@ -86,31 +87,35 @@ const BlogHome = ({ slugs, markdownWithMetaData }) => {
 
             // console.log(marked[i].data.postTitle);
             return (
-              <div key={slug} className={styles.card}>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <div className={styles.content}>
-                  <Image
-                    src={`/${slug}.jpg`}
-                    alt='Filip Bošnjak'
-                    className={styles.img}
-                    width='100%'
-                    height='60%'
-                    layout='responsive'
-                  />
-                  <h2>{marked[i].data.label}</h2>
+              <Slide bottom cascade>
+                <div>
+                  <div key={slug} className={styles.card}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <div className={styles.content}>
+                      <Image
+                        src={`/${slug}.jpg`}
+                        alt='Filip Bošnjak'
+                        className={styles.img}
+                        width='100%'
+                        height='60%'
+                        layout='responsive'
+                      />
+                      <h2>{marked[i].data.label}</h2>
 
-                  <h3>{marked[i].data.postTitle}</h3>
-                  <p>{marked[i].data.shortIntro}</p>
-                  <button className={styles.button}>
-                    <Link href={"/blog/" + slug}>
-                      <a>Read more</a>
-                    </Link>
-                  </button>
+                      <h3>{marked[i].data.postTitle}</h3>
+                      <p>{marked[i].data.shortIntro}</p>
+                      <button className={styles.button}>
+                        <Link href={"/blog/" + slug}>
+                          <a>Read more</a>
+                        </Link>
+                      </button>
+                    </div>
+                  </div>
                 </div>
-              </div>
+              </Slide>
             );
           })}
         </div>
