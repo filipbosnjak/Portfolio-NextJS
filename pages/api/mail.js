@@ -2,7 +2,8 @@
 
 const mail = require('@sendgrid/mail')
 
-mail.setApiKey('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')
+console.log(process.env.SENDGRID_API_KEY)
+mail.setApiKey(process.env.SENDGRID_API_KEY)
 
 export default function handler(req, res) {
   res.status(200).json({ email: 'EMAIL' })
@@ -11,12 +12,12 @@ export default function handler(req, res) {
 
   const sendGridMessage = `
     Name: ${body.fromName}\r\n
-    Email: ${body.email}\r\n
+    Email: ${body.from}\r\n
     Message: ${body.message}
   `
   const message = {
       to: 'filipo.bosnjak@gmail.com',
-      from: body.from,
+      from: 'filipo.bosnjak@gmail.com',
       subject: '[SENT FROM filipbosnjak-it.com] - ' + body.subject,
       text: sendGridMessage,
       html: sendGridMessage.replace(/\r\n/g, '<br>')
