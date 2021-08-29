@@ -81,15 +81,15 @@ const BlogHome = ({ slugs, markdownWithMetaData }) => {
             </div>
           </div>
         </nav>
-        <div className={styles.showcase}>
-          {slugs.map((slug, i) => {
-            // console.log(slug);
+        <Slide bottom cascade>
+          <div className={styles.showcase}>
+            {slugs.map((slug, i) => {
+              // console.log(slug);
 
-            // console.log(marked[i].data.postTitle);
-            return (
-              <Slide bottom cascade>
-                <div>
-                  <div key={slug} className={styles.card}>
+              // console.log(marked[i].data.postTitle);
+              return (
+                <div key={slug}>
+                  <div className={styles.card}>
                     <span></span>
                     <span></span>
                     <span></span>
@@ -115,10 +115,10 @@ const BlogHome = ({ slugs, markdownWithMetaData }) => {
                     </div>
                   </div>
                 </div>
-              </Slide>
-            );
-          })}
-        </div>
+              );
+            })}
+          </div>
+        </Slide>
       </div>
       <PostFooter />
     </>
