@@ -18,6 +18,10 @@ const HeadCustom = () => {
           integrity='sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=='
           crossOrigin='anonymous'
         />
+        <meta
+          name='description'
+          content='Filip Bošnjak Full Stack Developer, Machine learning blog, AI Blog, Javascript blog, Developers blog, IT blog'
+        />
       </Head>
     </>
   );

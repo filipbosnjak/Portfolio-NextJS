@@ -9,23 +9,27 @@ import LandingNavbar from "./LandingNavbar";
 const LandingSection = () => {
   return (
     <>
-      <Fade top>
+      <Slide top>
         <LandingNavbar />
-      </Fade>
+      </Slide>
       <section className={styles.home}>
         <div className={styles.content}>
-          <h1 className={styles.lgHeading}>
-            Filip <span className={styles.textSecondary}>Bošnjak</span>
-          </h1>
-          <h2 className={styles.smHeading}>
-            Physics &{" "}
-            <span className={styles.textSecondary}>Computer Science </span>
-            Master
-          </h2>
-          <h2 className={styles.smHeading}>
-            <span className={styles.textSecondary}>FullStack </span> Software
-            Developer
-          </h2>
+          <Slide top cascade>
+            <div className={styles.headings}>
+              <h1 className={styles.lgHeading}>
+                Filip <span className={styles.textSecondary}>Bošnjak</span>
+              </h1>
+              <h2 className={styles.smHeading}>
+                Physics &{" "}
+                <span className={styles.textSecondary}>Computer Science </span>
+                Master
+              </h2>
+              <h2 className={styles.smHeading}>
+                <span className={styles.textSecondary}>FullStack </span>{" "}
+                Software Developer
+              </h2>
+            </div>
+          </Slide>
           <div className={styles.buttons}>
             <Slide left>
               <div className={styles.left}>

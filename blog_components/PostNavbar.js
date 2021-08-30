@@ -40,22 +40,25 @@ const LandingNavbar = () => {
   return (
     <div className={styles.container}>
       <div className={`${styles.blogNavbar} ${isSticky}`}>
-          <button id='toggler' className={`${styles.menuToggler} ${isActive}`}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          <div className={`${styles.navbarMenu} ${isActive}`}>
-            <Link className={styles.link} href='/'>
-              About Me
-            </Link>
-            <Link className={styles.link} href='/blog'>
-              See more
-            </Link>
-            <Link className={styles.link} href='/#contact'>
-              Contact Me
-            </Link>
-          </div>
+        <button
+          id='toggler'
+          aria-label='Open menu'
+          className={`${styles.menuToggler} ${isActive}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div className={`${styles.navbarMenu} ${isActive}`}>
+          <Link className={styles.link} href='/'>
+            About Me
+          </Link>
+          <Link className={styles.link} href='/blog'>
+            See more
+          </Link>
+          <Link className={styles.link} href='/#contact'>
+            Contact Me
+          </Link>
+        </div>
       </div>
     </div>
   );
