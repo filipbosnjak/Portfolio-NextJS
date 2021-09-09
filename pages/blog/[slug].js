@@ -13,7 +13,8 @@ import Image from "next/image";
 import Slide from "react-reveal/Slide";
 
 const Post = ({ content, data, html, allPostsData }) => {
-  console.log("slug" + allPostsData[1].slug);
+  console.log("data" + data);
+  debugger;
   return (
     <>
       <Head>
@@ -49,10 +50,10 @@ const Post = ({ content, data, html, allPostsData }) => {
             <div className={styles.readMoreCards}>
               <div className={styles.container}>
                 {allPostsData.map((item, i) => {
-                  // console.log(slug);
+                  console.log("item" + item.slug);
 
                   // console.log(marked[i].data.postTitle);
-                  if (i < 2) {
+                  if (data.slug != item.slug) {
                     return (
                       <Slide bottom>
                         <div key={item.slug} className={styles.card}>

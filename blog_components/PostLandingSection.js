@@ -39,16 +39,23 @@ const PostLandingSection = ({ data }) => {
               </div>
               <div className={styles.social}>
                 <div className={styles.icon}>
-                  <i className='fab fa-facebook-f'></i>
+                  <a href='https://github.com/filipbosnjak'>
+                    <i className='fab fa-github'></i>
+                  </a>
                 </div>
                 <div className={styles.icon}>
-                  <i className='fab fa-linkedin'></i>
+                  <a href='https://linkedin.com/in/filipobosnjak'>
+                    <i className='fab fa-linkedin'></i>
+                  </a>
                 </div>
+                <div className={styles.icon}>
+                  <a href='https://www.facebook.com/filip.bosnjak.7509'>
+                    <i className='fab fa-facebook-f'></i>
+                  </a>
+                </div>
+
                 <div className={styles.icon}>
                   <i className='fab fa-instagram'></i>
-                </div>
-                <div className={styles.icon}>
-                  <i className='fab fa-github'></i>
                 </div>
               </div>
             </div>
